@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>欢迎来到后台管理界面</title>
+    <link rel="stylesheet" href="../static/themes/icon.css">
+    <link rel="stylesheet" href="../static/themes/default/easyui.css">
+    <script type="text/javascript" src="../static/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../static/easyloader.js"></script>
+    <script type="text/javascript" src="../static/easyui-lang-zh_CN.js"></script>
+</head>
+<script type="text/javascript">
+   $(function() {
+        $('#tt').tabs('add', {
+            title: '查看',
+            content: 'Tab Body',
+            closable: true,
+            tools: [{
+                iconCls: 'icon - mini - refresh',
+                handler: function() {
+                    alert('refresh');
+                }
+            }]
+        });
+    });
+
+</script>
+
+<body class="easyui-layout">
+<div data-options="region:'north',split:true" style="height:100px;">
+    <div><h1>手风琴效果</h1></div>
+</div>
+<div data-options="region:'south',split:true" style="height:60px;">
+    <div style="margin: auto; width: 400px ; padding: 20px; font-size: 20px;">Copyright ©拓胜公司 版权所有</div>
+</div>
+<div data-options="region:'west',title:'系统管理',split:true" style="width:240px;">
+    <div id="aa" class="easyui-accordion">
+        <div title="管理员管理" style="padding: 10px;">
+            <ul>
+                <li><a href="#">添加</a></li>
+                <li><a href="#">查看</a></li>
+                <li><a href="#">修改</a></li>
+                <li><a href="#">删除</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div data-options="region:'center',title:'编辑区 '" style="padding:5px;background:#eee;">
+    <div id="tt" class="easyui-tabs ">
+    <div title="添加 " data-options="closable:true " style="overflow:auto;padding:20px;display:none; ">
+        tab1
+    </div>
+    <div title="删除 " data-options="closable:true " style="overflow:auto;padding:20px;display:none; ">
+        tab2
+    </div>
+
+</div>
+</div>
+</body>
+</html>
